@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PersonalBlogs - Find Authentic Content</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="theme-label">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </label>
+    </div>
+
+    <div class="container">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <header>
+            <div class="logo">
+                <h1>PersonalBlogs<span class="highlight">.</span></h1>
+                <p class="tagline">Discover authentic personal blogs and articles</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <form id="search-form">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <div class="search-input-wrapper">
+                            <input type="text" id="search-input" placeholder="Search for authentic content..." autocomplete="off">
+                            <div class="search-dropdown hidden">
+                                <div class="search-history">
+                                    <h3><i class="fas fa-history"></i> Recent Searches</h3>
+                                    <ul id="search-history-list"></ul>
+                                </div>
+                                <div class="search-suggestions">
+                                    <h3><i class="fas fa-star"></i> Popular Searches</h3>
+                                    <div class="suggestion-tags">
+                                        <a href="#" class="suggestion-tag">Tech</a>
+                                        <a href="#" class="suggestion-tag">Personal Growth</a>
+                                        <a href="#" class="suggestion-tag">Writing</a>
+                                        <a href="#" class="suggestion-tag">Startup</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="search-filters" class="icon-button" title="Search Filters">
+                            <i class="fas fa-sliders-h"></i>
+                        </button>
+                        <button type="submit" id="search-button">
+                            Search
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Advanced Search Filters -->
+                <div id="advanced-filters" class="hidden">
+                    <div class="filters-grid">
+                        <div class="filter-group">
+                            <label>Date Range</label>
+                            <select id="date-filter">
+                                <option value="any">Any time</option>
+                                <option value="day">Past 24 hours</option>
+                                <option value="week">Past week</option>
+                                <option value="month">Past month</option>
+                                <option value="year">Past year</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select id="sort-filter">
+                                <option value="relevance">Relevance</option>
+                                <option value="date">Date</option>
+                                <option value="pagerank">Authority</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Content Type</label>
+                            <select id="type-filter">
+                                <option value="all">All Content</option>
+                                <option value="articles">Articles</option>
+                                <option value="tutorials">Tutorials</option>
+                                <option value="reviews">Reviews</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <div class="results-header">
+                    <div id="results-count"></div>
+                    <div class="results-actions">
+                        <button id="view-toggle" class="icon-button" title="Toggle View">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <div class="sort-dropdown">
+                            <button id="sort-toggle" class="icon-button" title="Sort Results">
+                                <i class="fas fa-sort"></i>
+                            </button>
+                            <div class="sort-menu hidden">
+                                <a href="#" data-sort="relevance">Most Relevant</a>
+                                <a href="#" data-sort="date">Most Recent</a>
+                                <a href="#" data-sort="pagerank">Most Popular</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="search-results" class="results-grid"></div>
+                
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Searching for authentic content...</p>
+                </div>
+                
+                <div id="no-results" class="hidden">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2>No results found</h2>
+                    <p>Try different keywords or broaden your search</p>
+                    <div class="search-suggestions">
+                        <h3>Try searching for:</h3>
+                        <div class="suggestion-tags">
+                            <a href="#" class="suggestion-tag">Programming</a>
+                            <a href="#" class="suggestion-tag">Life Lessons</a>
+                            <a href="#" class="suggestion-tag">Book Reviews</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>PersonalBlogs - A search engine for authentic personal content</p>
+                    <p class="small">Filters out SEO-optimized corporate content</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">About</a>
+                        <a href="#" class="footer-link">Privacy</a>
+                        <a href="#" class="footer-link">Terms</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PersonalBlogs. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html> 
