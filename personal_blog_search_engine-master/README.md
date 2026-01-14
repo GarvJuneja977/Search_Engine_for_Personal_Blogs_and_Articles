@@ -132,5 +132,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgments
 
-- Thanks to all contributors who have helped shape this project
-- Special thanks to the open-source community for the amazing tools and libraries that made this possible
+- Thanks to all contributors who have helped shape this project.
+- Special thanks to the open-source community for the amazing tools and libraries that made this possible.
