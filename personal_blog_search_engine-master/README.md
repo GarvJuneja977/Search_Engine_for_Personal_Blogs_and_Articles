@@ -127,8 +127,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👤 Author
 
-- Garvit Garg
-- GitHub: [@garvit5555](https://github.com/garvit5555)
+- Garv Juneja
+- GitHub: [@GarvJuneja977](https://github.com/GarvJuneja977)
 
 ## 🙏 Acknowledgments
 
